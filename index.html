@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leetCode-stats</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Container">
+        <!-- heading leetCode-stats -->
+         <div class="topheading">
+          <div> <h1>LeetCode-Stats</h1></div>
+         <div class="subtitle"> <p >
+  Visualize your LeetCode progress instantly
+</p></div> 
+         </div>
+        <!-- input username and search button -->
+        <div class="input">
+            <input type="text" id="user-name" placeholder="Enter your username ">
+            <button id="search-btn">
+                Search
+            </button>
+             <button id="refresh-btn" class="hidden">Refresh</button>
+        </div>
+        
+        <!-- here the stats  -->
+         <div class="stats">
+            <!-- stats circle and cards -->
+            <div class="statscircle">
+                  <div class="circle easy">
+                    <span id="easylabel"></span>
+                    <div class="names">easy</div>
+                  </div>
+                   <div class="circle medium">
+                    <span id="mediumlabel" ></span>
+                    <div class="names">
+                      medium
+                    </div>
+                  </div>
+                   <div class="circle hard">
+                    <span id="hardlabel" ></span>
+                    <div class="names">hard</div>
+                  
+                  </div>
+            </div>
+            <div class="statsCards">
+             <!-- vertical 1  -->
+              <div class="vertical1">
+
+               <div class="stat-card">
+    <p class="card-label">Total Solved :</p>
+    <p class="card-value" id="total-solved">0</p>
+  </div>
+
+  <div class="stat-card easy-card">
+    <p class="card-label">Ranking : </p>
+    <p class="card-value" id="easy-solved">0</p>
+     </div>
+</div>
+
+     <!-- veritical 2  -->
+
+     <div class="vertical2">
+  <div class="stat-card medium-card">
+    <p class="card-label">Acceptance rate : </p>
+    <p class="card-value" id="medium-solved">0</p>
+  </div>
+
+  <div class="stat-card hard-card">
+    <p class="card-label">Reputation : </p>
+    <p class="card-value" id="reputation">0</p>
+  </div>
+</div>
+
+
+            </div>
+         </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
