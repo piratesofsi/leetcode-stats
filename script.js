@@ -51,7 +51,8 @@ const refreshBtn = document.getElementById("refresh-btn");
   }
 
   async function fetchuserdetails(username) {
-   const url = `https://leetcode-api-faisalshohag.vercel.app/${username}`;
+  const url = `https://leetcode-stats-api.herokuapp.com/${username}`;
+
     try {
       searchbtn.textContent = "searching";
       searchbtn.disabled = true;
@@ -131,4 +132,5 @@ refreshBtn.addEventListener("click", () => {
 
   
 });
+
 
