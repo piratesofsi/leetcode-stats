@@ -35,6 +35,13 @@ const refreshBtn = document.getElementById("refresh-btn");
       fetchuserdetails(username);
     }
   });
+  
+  usernameinput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchbtn.click();
+  }
+});
+
 
   function validateusername(username) {
     if (username.trim() == "") {
@@ -51,8 +58,7 @@ const refreshBtn = document.getElementById("refresh-btn");
   }
 
   async function fetchuserdetails(username) {
-const url = `https://leetcode-api-faisalshohag.vercel.app/${username}`;
-
+   const url = `https://leetcode-api-faisalshohag.vercel.app/${username}`;
     try {
       searchbtn.textContent = "searching";
       searchbtn.disabled = true;
@@ -98,16 +104,30 @@ const url = `https://leetcode-api-faisalshohag.vercel.app/${username}`;
     
 
     const Ranking = data.ranking;
-    const acceptanceRate=data.acceptanceRate;
-    const reputation=data.reputation;
+   
+ 
+const allStats = data.totalSubmissions.find(
+  item => item.difficulty === "All"
+);
+
+const totalSubmissions = allStats.submissions; // 761
+
+const reputation=data.reputation;
+
+
+// acceptance rate
+const acceptanceRate = ((allStats.count / allStats.submissions) * 100).toFixed(2);
+
+
     updatecircle(easycircle, easylabel, easysolved, totaleasy);
     updatecircle(mediumcircle, mediumlabel, mediumsolved, totalmedium);
     updatecircle(hardcircle, hardlabel, hardsolved, totalhard);
      updatecard(totalSolved,totalSolvedEl);
-     updatecard(`#${data.ranking.toLocaleString()}`,rankingEl);
-     updatecard(`${data.acceptanceRate.toFixed(2)} %`,acceptanceRateEl);
-     updatecard(reputation,reputationEl);
-      
+     updatecard(`${data.ranking.toLocaleString()}`,rankingEl);
+   
+      // update cards
+updatecard(`${totalSubmissions.toLocaleString()}`, reputationEl);
+updatecard(reputation, acceptanceRateEl);
   }
 
   function updatecircle(circle, label, solved, total) {
@@ -132,6 +152,3 @@ refreshBtn.addEventListener("click", () => {
 
   
 });
-
-
-
