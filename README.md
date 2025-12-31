@@ -32,6 +32,10 @@ Live Demo: https://leetcode-stats-ten.vercel.app
 - Deployed on Vercel
 
 ---
+---
+##Screenshots
+
+----
 
 ## How It Works
 
