@@ -33,7 +33,7 @@ Live Demo: https://leetcode-stats-ten.vercel.app
 
 ---
 ---
-##Screenshots
+## Screenshots
 
 ----
 
