@@ -34,7 +34,7 @@ Live Demo: https://leetcode-stats-ten.vercel.app
 ---
 ---
 ## Screenshots
-![LeetCode Stats Preview](assets/preview.png)
+![LeetCode Stats Preview](assets/preview1.png)
 ----
 
 ## How It Works
